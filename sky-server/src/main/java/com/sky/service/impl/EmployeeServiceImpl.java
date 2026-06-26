@@ -29,6 +29,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
     private EmployeeMapper employeeMapper;
+    @Autowired
+    private EmployeeService employeeService;
 
     /**
      * 员工登录
@@ -69,7 +71,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void save(EmployeeDTO employeeDTO) {
-        System.out.println("当前线程id" + Thread.currentThread().getId());
         //1、将EmployeeDTO转换为Employee 使用实体类写入数据库
         /*Employee employee = new Employee();
         employee.setUsername(employeeDTO.getUsername());
@@ -105,6 +106,23 @@ public class EmployeeServiceImpl implements EmployeeService {
         long total = page.getTotal();
         List<Employee> records = page.getResult();
         return new PageResult(total, records);
+    }
+
+    /**
+     * 启用禁用员工账号
+     * @param status
+     * @param id
+     */
+    @Override
+    public void startOrStop(Integer status, Long id) {
+       /* Employee employee = new Employee();
+        employee.setId(id);
+        employee.setStatus(status);*/
+        Employee employee =  Employee.builder()
+                        .id(id)
+                        .status(status)
+                        .build();
+        employeeMapper.update(employee);
     }
 
 }
