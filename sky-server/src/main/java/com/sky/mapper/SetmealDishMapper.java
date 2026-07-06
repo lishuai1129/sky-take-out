@@ -22,4 +22,10 @@ public interface SetmealDishMapper {
      */
     @Delete("delete from setmeal_dish where dish_id = #{dishId}")
     void deleleByDishId(Long dishId);
+
+    /**
+     * 优化批量
+     * @param dishIds
+     */
+    void deleleByDishIds(List<Long> dishIds);
 }
