@@ -43,6 +43,14 @@ public interface DishService {
     void updatWithFlavor(DishDTO dishDTO);
 
     /**
+     * 设置菜品的起售或停售状态。
+     *
+     * @param status 菜品状态，1为起售，0为停售
+     * @param id 菜品id
+     */
+    void startOrStop(Integer status, Long id);
+
+    /**
      * 条件查询菜品和口味
      * @param dish 菜品查询条件
      * @return 返回结果
