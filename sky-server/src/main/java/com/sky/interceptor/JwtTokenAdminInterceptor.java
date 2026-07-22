@@ -60,4 +60,20 @@ public class JwtTokenAdminInterceptor implements HandlerInterceptor {
             return false;
         }
     }
+
+    /**
+     * 请求处理完成后清理当前线程中保存的员工id。
+     *
+     * @param request HTTP请求对象
+     * @param response HTTP响应对象
+     * @param handler 被拦截的处理器
+     * @param ex 请求处理过程中产生的异常
+     */
+    @Override
+    public void afterCompletion(HttpServletRequest request,
+                                HttpServletResponse response,
+                                Object handler,
+                                Exception ex) {
+        BaseContext.removeCurrentId();
+    }
 }
