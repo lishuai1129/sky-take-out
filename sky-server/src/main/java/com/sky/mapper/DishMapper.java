@@ -18,8 +18,8 @@ public interface DishMapper {
 
     /**
      * 根据分类id查询菜品数量
-     * @param categoryId
-     * @return
+     * @param categoryId 分类id
+     * @return 返回结果
      */
     @Select("select count(id) from dish where category_id = #{categoryId}")
     Integer countByCategoryId(Long categoryId);
@@ -32,15 +32,15 @@ public interface DishMapper {
 
     /**
      * 分页查询
-     * @param dishPageQueryDTO
-     * @return
+     * @param dishPageQueryDTO 菜品分页查询条件
+     * @return 返回结果
      */
     Page<DishVO> pageQuery(DishPageQueryDTO dishPageQueryDTO);
 
     /**
      * 根据id查询菜品
-     * @param id
-     * @return
+     * @param id 主键id
+     * @return 返回结果
      */
     @Select("select * from dish where id = #{id}")
     Dish getById(Long id);
@@ -60,4 +60,22 @@ public interface DishMapper {
 
     @AutoFill(OperationType.UPDATE)
     void update(Dish dish);
+
+    /**
+     * 动态条件查询菜品。
+     *
+     * @param dish 菜品查询条件
+     * @return 菜品列表
+     */
+    List<Dish> list(Dish dish);
+
+    /**
+     * 根据套餐id查询套餐包含的菜品。
+     *
+     * @param setmealId 套餐id
+     * @return 套餐包含的菜品列表
+     */
+    @Select("select d.* from dish d left join setmeal_dish sd on d.id = sd.dish_id " +
+            "where sd.setmeal_id = #{setmealId}")
+    List<Dish> getBySetmealId(Long setmealId);
 }

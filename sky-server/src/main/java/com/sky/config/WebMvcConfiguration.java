@@ -39,7 +39,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     /**
      * 注册自定义拦截器
      *
-     * @param registry
+     * @param registry 注册器对象
      */
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
@@ -56,7 +56,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 
     /**
      * 通过knife4j生成接口文档
-     * @return
+     * @return 返回结果
      */
     @Bean
     public Docket docket1() {
@@ -94,7 +94,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 
     /**
      * 设置静态资源映射
-     * @param registry
+     * @param registry 注册器对象
      */
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -105,7 +105,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 
     /**
      * 扩展Spring MVC 框架的消息转化器
-     * @param converters
+     * @param converters 消息转换器集合
      */
     protected void extendMessageConverters(List<HttpMessageConverter<?>> converters){
         log.info("扩展消息转换器");

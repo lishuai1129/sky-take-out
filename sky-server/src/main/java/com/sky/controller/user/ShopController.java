@@ -22,7 +22,7 @@ public class ShopController {
 
     /**
      * 获取店铺营业状态
-     * @return
+     * @return 返回结果
      */
     @ApiOperation("获取店铺营业状态")
     @GetMapping("/status")

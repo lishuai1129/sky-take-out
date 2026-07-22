@@ -45,7 +45,7 @@ sky:
     #为用户生成JWT令牌 token
     user-secret-key: itheima
     user-ttl: 7200000
-    user-token-name: authoriaztion
+    user-token-name: authentication
   alioss:
         endpoint: ${sky.alioss.endpoint}
         access-key-id: ${sky.alioss.access-key-id}

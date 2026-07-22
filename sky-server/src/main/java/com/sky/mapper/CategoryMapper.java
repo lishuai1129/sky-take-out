@@ -25,29 +25,29 @@ public interface CategoryMapper {
 
     /**
      * 分页查询
-     * @param categoryPageQueryDTO
+     * @param categoryPageQueryDTO 分类分页查询条件
      * @return 分类列表
      */
     Page<Category> pageQuery(CategoryPageQueryDTO categoryPageQueryDTO);
 
     /**
      * 根据id删除分类
-     * @param id
+     * @param id 主键id
      */
     @Delete("delete from category where id = #{id}")
     void deleteById(Long id);
 
     /**
      * 根据id修改分类
-     * @param category
+     * @param category 分类信息
      */
     @AutoFill(OperationType.UPDATE)
     void update(Category category);
 
     /**
      * 根据类型查询分类
-     * @param type
-     * @return
+     * @param type 分类类型
+     * @return 返回结果
      */
     List<Category> list(Integer type);
 }

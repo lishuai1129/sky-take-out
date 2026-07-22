@@ -29,9 +29,9 @@ public class HttpClientUtil {
 
     /**
      * 发送GET方式请求
-     * @param url
-     * @param paramMap
-     * @return
+     * @param url 请求地址
+     * @param paramMap 请求参数
+     * @return 返回结果
      */
     public static String doGet(String url,Map<String,String> paramMap){
         // 创建Httpclient对象
@@ -75,10 +75,10 @@ public class HttpClientUtil {
 
     /**
      * 发送POST方式请求
-     * @param url
-     * @param paramMap
-     * @return
-     * @throws IOException
+     * @param url 请求地址
+     * @param paramMap 请求参数
+     * @return 返回结果
+     * @throws IOException 方法执行过程中可能抛出的异常
      */
     public static String doPost(String url, Map<String, String> paramMap) throws IOException {
         // 创建Httpclient对象
@@ -122,10 +122,10 @@ public class HttpClientUtil {
 
     /**
      * 发送POST方式请求
-     * @param url
-     * @param paramMap
-     * @return
-     * @throws IOException
+     * @param url 请求地址
+     * @param paramMap 请求参数
+     * @return 返回结果
+     * @throws IOException 方法执行过程中可能抛出的异常
      */
     public static String doPost4Json(String url, Map<String, String> paramMap) throws IOException {
         // 创建Httpclient对象

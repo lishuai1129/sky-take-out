@@ -35,9 +35,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     /**
      * 员工登录
      *
-     * @param employeeLoginDTO
+     * @param employeeLoginDTO 员工登录信息
      *
-     * @return
+     * @return 返回结果
      */
     public Employee login(EmployeeLoginDTO employeeLoginDTO) {
         String username = employeeLoginDTO.getUsername();
@@ -95,8 +95,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * 分页查询
-     * @param employeePageQueryDTO
-     * @return
+     * @param employeePageQueryDTO 员工分页查询条件
+     * @return 返回结果
      */
     @Override
     public PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
@@ -109,8 +109,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * 启用禁用员工账号
-     * @param status
-     * @param id
+     * @param status 状态
+     * @param id 主键id
      */
     @Override
     public void startOrStop(Integer status, Long id) {
@@ -126,8 +126,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * 根据id查询员工信息
-     * @param id
-     * @return
+     * @param id 主键id
+     * @return 返回结果
      */
     @Override
     public Employee getById(Long id) {

@@ -37,8 +37,8 @@ public class EmployeeController {
     /**
      * 登录
      *
-     * @param employeeLoginDTO
-     * @return
+     * @param employeeLoginDTO 员工登录信息
+     * @return 返回结果
      */
     @PostMapping("/login")
     @ApiOperation(value = "员工登录")
@@ -68,7 +68,7 @@ public class EmployeeController {
     /**
      * 退出
      *
-     * @return
+     * @return 返回结果
      */
     @PostMapping("/logout")
     @ApiOperation(value = "员工退出登录")
@@ -92,9 +92,9 @@ public class EmployeeController {
 
     /**
      * 启用禁用员工
-     * @param status
-     * @param id
-     * @return
+     * @param status 状态
+     * @param id 主键id
+     * @return 返回结果
      */
     @PostMapping("/status/{status}")
     @ApiOperation("启用禁用员工")
@@ -106,8 +106,8 @@ public class EmployeeController {
 
     /**
      * 根据 id 查询信息回显
-     * @param id
-     * @return
+     * @param id 主键id
+     * @return 返回结果
      */
     @GetMapping("/{id}")
     @ApiOperation("根据id回显")

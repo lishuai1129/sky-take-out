@@ -26,11 +26,11 @@ public class JwtTokenAdminInterceptor implements HandlerInterceptor {
     /**
      * 校验jwt
      *
-     * @param request
-     * @param response
-     * @param handler
-     * @return
-     * @throws Exception
+     * @param request HTTP请求对象
+     * @param response HTTP响应对象
+     * @param handler 被拦截的处理器
+     * @return 返回结果
+     * @throws Exception 方法执行过程中可能抛出的异常
      */
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
