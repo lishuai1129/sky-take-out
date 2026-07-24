@@ -51,8 +51,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
             return;
         }
 
-        /**
-         * 不存在插入一条购物车商品
+        /*
+          不存在插入一条购物车商品
          */
         ShoppingCart shoppingCart = buildNewShoppingCart(shoppingCartDTO);
         shoppingCartMapper.insert(shoppingCart);
